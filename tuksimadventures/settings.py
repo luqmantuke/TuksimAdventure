@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tkadventure',
+    'django_filters',
+    
 ]
 
 MIDDLEWARE = [
