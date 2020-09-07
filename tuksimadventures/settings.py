@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tkadventure',
     'django_filters',
-    
+    'crispy_forms',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

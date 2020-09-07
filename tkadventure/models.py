@@ -17,4 +17,14 @@ class Tour(models.Model):
     
     def __str__(self):
         return self.name
-    
+
+
+class Bookings(models.Model):
+    email = models.EmailField()
+    full_name = models.CharField(max_length=255)
+    tour_name = models.CharField(max_length=255)
+    quantity = models.PositiveIntegerField()
+    message = models.TextField(blank=True)
+ 
+    def __str__(self):
+        return self.full_name

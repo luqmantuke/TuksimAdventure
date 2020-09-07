@@ -3,6 +3,11 @@ from django.views.generic import ListView
 from tkadventure.models import Tour
 from django.db.models import Q
 from tkadventure.filters import TourFilter
+from tkadventure.forms import BookingForm
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
+
 
 
 def index(request):
@@ -14,24 +19,19 @@ def tour_list(request):
     template_name = 'tkadventure/tour_list.html'
     myFilter = TourFilter(request.GET, queryset=tours)
     tours = myFilter.qs
-    context = {
-        'tour': tours,
-        'myfilter': myFilter
-    }
-    return render(request, template_name, context)
-
-
-
-
-class SearchResults(ListView):
-    model = Tour
-    template_name = 'search_results.html'
-
-    def get_queryset(self):
-        query = self.request.GET.get('q')
-        object_list = Tour.objects.filter(
-            Q(tour_type__contains=query)
-        )
-        return object_list
-
     
+    if request.method == "POST":
+
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Tour submition was successfully!")
+            return HttpResponseRedirect(reverse('home'))
+        else:
+            print(form.errors)
+    else:
+        form = BookingForm()
+
+    return render(request, template_name, {'tour': tours,
+        'myfilter': myFilter, 'bkform': form})
+

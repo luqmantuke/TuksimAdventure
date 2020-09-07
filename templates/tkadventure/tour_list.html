@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 {% block title %}
 Tours
 {% endblock title %}
 {% block body %}
-
+  
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url('{% static 'images/bg_2.jpg' %}');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
+        
         <div class="container">
           <div class="row slider-text align-items-center">
             <div class="col-md-7 col-sm-12 ftco-animate">
@@ -21,7 +23,23 @@ Tours
     <!-- END slider -->
 
     <section class="ftco-section">
-
+<div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/nle3u6Ww6Xk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col">
+  <h3>How to book?</h3>
+  <p><b>{% lorem 1 b random %}</b></p>
+    </div>
+</div>
+</div>
+<div style="padding-top: 02%; padding-bottom:02%">
+  <div class="row">
+  </div>
+  </div>
+  </div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
@@ -41,6 +59,7 @@ Tours
             {% endfor %}
           <!-- END -->
 
+
 </div>
 </div>
 
@@ -48,6 +67,10 @@ Tours
             <div class="sidebar-box ftco-animate">
               <div class="search-tours bg-light p-4">
                 <h3>Find your tour</h3>
+                <b>
+                <p style="color: Green">Fill ONLY ONE information to get best result. Either <br>
+                *NAME  or  <br>*TOUR TYPE</p>
+                </b>
                 <form action="" method="get">
                 {% csrf_token %}
                   <div class="fields">
@@ -65,42 +88,52 @@ Tours
                 </form>
               </div>
             </div>
-
-            <div class="sidebar-box ftco-animate">
-              <div class="categories">
-                <h3>Categories</h3>
-                <li><a href="#">Tours <span>(12)</span></a></li>
-                <li><a href="#">Hotels <span>(22)</span></a></li>
-                <li><a href="#">Cruises <span>(37)</span></a></li>
-                <li><a href="#">Restaurant <span>(42)</span></a></li>
-                <li><a href="#">Destination <span>(14)</span></a></li>
-              </div>
-            </div>
-
-            <div class="sidebar-box ftco-animate">
-              <h3>Tag Cloud</h3>
-              <div class="tagcloud">
-                <a href="#" class="tag-cloud-link">Life</a>
-                <a href="#" class="tag-cloud-link">Sport</a>
-                <a href="#" class="tag-cloud-link">Tech</a>
-                <a href="#" class="tag-cloud-link">Travel</a>
-                <a href="#" class="tag-cloud-link">Life</a>
-                <a href="#" class="tag-cloud-link">Sport</a>
-                <a href="#" class="tag-cloud-link">Tech</a>
-                <a href="#" class="tag-cloud-link">Travel</a>
-              </div>
-            </div>
 </div>
 </div>
-            <div class="sidebar-box ftco-animate">
-              <h3>Paragraph</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-            </div>
+           
+ 
           </div>
         </div>
+          <div class="container">
+    <h3 style="text-align: center">Didn't find you tour?</h3>
+    <p style="color:red;">fill the below form with the tour name, number of people and email and we will arrange and contact you shortly through your email.</p>  
+
+<form method="post" action="{% url 'tours' %}">
+{% csrf_token %}
+{% if bkform.errors %}
+            <span>{{ bkform.errors|striptags }}</span>
+        {% endif %}
+  <div class="form-group">
+  <div style="color:green;">  <label for="exampleInputEmail1">Email address</label></div> 
+      {% render_field bkform.email class="form-control" placeholder="example@example.com"%}
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+   <div style="color:green;"> <label for="exampleInputPassword1">Full name</label></div>
+       {% render_field bkform.full_name class="form-control" placeholder="John David Paul"%}
+  </div>
+  <div class="form-group">
+    <div style="color:green;"><label for="exampleInputPassword1">Tour name</label></div>
+      {% render_field bkform.tour_name class="form-control" placeholder="Kilimanjaro"%}
+  </div>
+ <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+     <div style="color:green;"> <label class="mr-sm-2" for="inlineFormCustomSelect">Number of People</label></div>
+        {% render_field bkform.quantity class="form-control" placeholder="1"%}
+</div>
+</div>
+  <div class="form-group">
+    <div style="color:green;"><label for="exampleInputPassword1">Message</label></div>
+      {% render_field bkform.message class="form-control" placeholder="Hello i need to climb mount Kilimanjaro.........."%}
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
       </div>
       </div>
 
     </section>
+
 
 {% endblock body %}

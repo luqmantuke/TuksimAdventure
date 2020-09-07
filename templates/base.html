@@ -23,7 +23,13 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
-    
+{% if messages %}<br>
+<div style="font-size:13px;" class="col-md-12 text-center mt-0 pt-0">
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message | safe }}</div>   
+  {% endfor %}
+</div>
+{% endif %}
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
         <a class="navbar-brand" href="index.html">TuksimAdventure</a>
