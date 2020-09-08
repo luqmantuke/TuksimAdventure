@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<title>{% block title %} Dashboard {% endblock title %}
+{% block body %}
+
+<div style="padding-left: 34%;font-family: cursive;background-color: rgba(46, 192, 250, 0.5);font-weight: 800;"><h2> Control Panel Dashboard</h2></div>
+<hr>
+  <h4><p> Welcome, <small><b>{{ request.user }}</b></small></p></h4>
+<hr>
+<div style="padding-left: 40%;"><a class="btn btn-danger" href="{% url 'post_form' %}">Make A Post</a></div>
+<hr>
+    {% if posts %}
+        <table class="table">
+            <thead>
+                <tr>
+                
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">Update Post</th>
+                    <th scope="col">Delete Post</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <th scope="row">{{ post.slug }}</th>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.publish }}</td>
+                    <td><a href="{% url 'update_post' post.slug %}" class = "btn btn-danger">Update Post</a></td>
+                    <td><a href="{% url 'delete_post' post.slug %}" class = "btn btn-danger">Delete Post</a></td>
+                
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+           <div class = "alert alert-danger">
+                Sorry You've no Posts yet...
+
+            </div>
+    {% endif %}
+{% endblock body %}
+

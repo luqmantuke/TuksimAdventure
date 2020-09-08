@@ -3,10 +3,10 @@ from django.db.models.signals import pre_save
 from tuksimadventures.utils import unique_slug_generator
 
 tour_list = [
-    ('t', "Trekking"),
-    ('s', "Safari"),
-    ('i', "Island"),
-    ('m', "More")
+    ('Trekking', "Trekking"),
+    ('Safari', "Safari"),
+    ('Island', "Island"),
+    ('More', "More")
 ]
 
 
@@ -17,6 +17,7 @@ class Tour(models.Model):
     tour_type = models.CharField(choices=tour_list, max_length=20)
     slug = models.SlugField(max_length=250, blank=True, null=True)
     tour_descr = models.CharField(max_length=1000, blank=True, null=True)
+    popular = models.BooleanField(max_length=10, blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse("tour_detail", kwargs={"slug": self.slug})

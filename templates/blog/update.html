@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<title>{% block title %}Update Post{% endblock title %}</title>
+{% block body %}
+
+<div style="background-color: rgb(176, 188, 240);
+  padding-top: 8%;
+  padding-left: 35%;">
+   <form method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div style="padding-left: 20%;">
+    <button type="submit" class="btn btn-primary mb-2">Update Post</button>
+    </div>
+   </form>
+</div>
+{% endblock body %}

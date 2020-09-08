@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<title>{% block title %}Create Posts{% endblock title %}</title>
+{% block body %}
+<section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_1.jpg' %}');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 ftco-animate">
+              <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
+              <h1 class="mb-3">Blog</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<div style="background-color: rgb(176, 188, 240);
+  padding-top: 8%;
+  padding-left: 35%;">
+   <form method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div style="padding-left: 20%;">
+    <button type="submit" class="btn btn-primary mb-2">Create Post</button>
+    </div>
+   </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %}TanzaBlog{% endblock title %}
+  <!-- Page Content -->
+
+{% block body %}
+<section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_1.jpg' %}');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 ftco-animate">
+              <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
+              <h1 class="mb-3">Blog</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row">
+        {% for post in posts %}
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="blog-entry" data-aos-delay="200">
+              <a href="{% url 'post_detail' post.slug  %}" class="block-20" style="background-image: url('{{ post.image.url }}');">
+              </a>
+              <h5 class="heading"><a href="#">{{ post.name }}</a></h5>
+              <div class="text p-4">
+                <div class="meta">
+                  <div><a href="#">{{ post.publish }}</a></div>
+                  <div><a href="#">{{ post.author }}</a></div>
+                </div>
+                <h3 class="heading">{{post.body | slice:":50"}}</h3>
+                <p class="clearfix">
+                  <a href="{% url 'post_detail' post.slug  %}" class="float-left">Read more</a>
+
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+{% if is_paginated %}
+<hr>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center pagination-sm">
+        {% if page_obj.has_previous %}
+          <!-- If it ain't a search result display, don't append the search query
+               to the URL. -->
+          {% if not search %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'blog' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+          {% else %}
+          <!-- Append the searched query to the URL, so that on a search results page,
+               the pagination don't revert to listing all the listview items. -->
+            <li class="page-item">
+              <a class="page-link" href="{% url 'blog' %}?{{search}}&page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+          {% endif %}
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %} 
+        {% for object in page_obj.paginator.page_range %}
+            <li class="page-item"><a class="page-link" href="{% url 'blog' %}?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+        {% endfor %} 
+        {% if page_obj.has_next %}
+          {% if not search %}
+          <li class="page-item">
+              <a class="page-link" href="{% url 'blog' %}?page={{ page_obj.next_page_number }}">Next</a>
+          </li>
+          {% else %}
+            <li class="page-item">
+              <a class="page-link" href="{% url 'blog' %}?{{search}}&page={{ page_obj.next_page_number }}">Next</a>
+          </li>
+          {% endif %}
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+</hr>
+{% endif %}
+
+{% endblock body %}

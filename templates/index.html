@@ -72,32 +72,28 @@
             <a href="#" class="promo-img mb-4" style="background-image: url('{% static 'images/promo-1.jpg' %}');"></a>
             <div class="text text-center">
               <h2>Group Cruises</h2>
-              <h3 class="price"><span>from</span> $299</h3>
-              <a href="#" class="read">Read more</a>
+
             </div>
           </div>
           <div class="col-lg-3 promo ftco-animate">
             <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/promo-2.jpg' %});"></a>
             <div class="text text-center">
               <h2>Beach Tours</h2>
-              <h3 class="price"><span>from</span> $199</h3>
-              <a href="#" class="read">Read more</a>
+  
             </div>
           </div>
           <div class="col-lg-3 promo ftco-animate">
             <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/promo-3.jpg' %});"></a>
             <div class="text text-center">
               <h2>Mountain Tours</h2>
-              <h3 class="price"><span>from</span> $179</h3>
-              <a href="#" class="read">Read more</a>
+
             </div>
           </div>
           <div class="col-lg-3 promo ftco-animate">
             <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/promo-3.jpg' %});"></a>
             <div class="text text-center">
               <h2>Family Tours</h2>
-              <h3 class="price"><span>from</span> $599</h3>
-              <a href="#" class="read">Read more</a>
+
             </div>
           </div>
         </div>
@@ -161,102 +157,20 @@
           </div>
         </div>
         <div class="row no-gutters">
+        {% for dest in tours %}
           <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="#" class="block-5" style="background-image: url('{% static 'images/tour-1.jpg' %}');">
+            <a href="{% url 'tour_detail' dest.slug %}" class="block-5" style="background-image: url('{{ dest.image.url }}');">
               <div class="text">
-                <span class="price">$399</span>
-                <h3 class="heading">Group Tour in Maldives</h3>
+                <h3 class="heading">{{ dest.name }}</h3>
                 <div class="post-meta">
-                  <span>Ameeru Ahmed Magu Male’, Maldives</span>
+                  <span>{{ dest.location }}</span><br>
+                   <span>Tour Type</span>
+                  <h3 class="heading">Category: {{ dest.tour_type }}</h3>
                 </div>
-                <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
               </div>
             </a>
           </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="#" class="block-5" style="background-image: url('{% static 'images/tour-2.jpg' %}');">
-              <div class="text">
-                <span class="price">$399</span>
-                <h3 class="heading">Group Tour in Maldives</h3>
-                <div class="post-meta">
-                  <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                </div>
-                <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="#" class="block-5" style="background-image: url('{% static 'images/tour-3.jpg' %}');">
-              <div class="text">
-                <span class="price">$399</span>
-                <h3 class="heading">Group Tour in Maldives</h3>
-                <div class="post-meta">
-                  <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                </div>
-                <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="#" class="block-5" style="background-image: url('{% static 'images/tour-4.jpg' %}');">
-              <div class="text">
-                <span class="price">$399</span>
-                <h3 class="heading">Group Tour in Maldives</h3>
-                <div class="post-meta">
-                  <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                </div>
-                <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="#" class="block-5" style="background-image: url('{% static 'images/tour-5.jpg' %}');">
-              <div class="text">
-                <span class="price">$399</span>
-                <h3 class="heading">Group Tour in Maldives</h3>
-                <div class="post-meta">
-                  <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                </div>
-                <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="#" class="block-5" style="background-image: url('{% static 'images/tour-6.jpg' %}');">
-              <div class="text">
-                <span class="price">$399</span>
-                <h3 class="heading">Group Tour in Maldives</h3>
-                <div class="post-meta">
-                  <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                </div>
-                <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="#" class="block-5" style="background-image: url('{% static 'images/tour-7.jpg' %}');">
-              <div class="text">
-                <span class="price">$399</span>
-                <h3 class="heading">Group Tour in Maldives</h3>
-                <div class="post-meta">
-                  <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                </div>
-                <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <a href="#" class="block-5" style="background-image: url('{% static 'images/tour-8.jpg' %}');">
-              <div class="text">
-                <span class="price">$399</span>
-                <h3 class="heading">Group Tour in Maldives</h3>
-                <div class="post-meta">
-                  <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                </div>
-                <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-              </div>
-            </a>
-          </div>
+        {% endfor %}  
         </div>
       </div>
     </section>
@@ -398,91 +312,25 @@
         </div>
         <div class="row ftco-animate">
           <div class="carousel1 owl-carousel ftco-owl">
+          {% for post in posts %}
             <div class="item">
               <div class="blog-entry">
-                <a href="blog-single.html" class="block-20" style="background-image: url('{% static 'images/image_5.jpg' %}');">
+                <a href="{% url 'post_detail' post.slug %}" class="block-20" style="background-image: url({{ post.image.url }});">
                 </a>
                 <div class="text p-4">
                   <div class="meta">
-                    <div><a href="#">July 7, 2018</a></div>
-                    <div><a href="#">Admin</a></div>
+                    <div><a href="#">{{ post.publish }}</a></div>
+                    <div><a href="#">{{ post.author }}</a></div>
                   </div>
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <h3 class="heading"><a href="#">{{ post.name }}</a></h3>
                   <p class="clearfix">
-                    <a href="#" class="float-left">Read more</a>
-                    <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
+                    <a href="{% url 'post_detail' post.slug %}" class="float-left">Read more</a>
                   </p>
                 </div>
               </div>
             </div>
-            <div class="item">
-              <div class="blog-entry" data-aos-delay="100">
-                <a href="blog-single.html" class="block-20" style="background-image: url('{% static 'images/image_6.jpg' %}');">
-                </a>
-                <div class="text p-4">
-                  <div class="meta">
-                    <div><a href="#">July 7, 2018</a></div>
-                    <div><a href="#">Admin</a></div>
-                  </div>
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p class="clearfix">
-                    <a href="#" class="float-left">Read more</a>
-                    <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="blog-entry" data-aos-delay="200">
-                <a href="blog-single.html" class="block-20" style="background-image: url('{% static 'images/image_7.jpg' %}');">
-                </a>
-                <div class="text p-4">
-                  <div class="meta">
-                    <div><a href="#">July 7, 2018</a></div>
-                    <div><a href="#">Admin</a></div>
-                  </div>
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p class="clearfix">
-                    <a href="#" class="float-left">Read more</a>
-                    <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="blog-entry" data-aos-delay="200">
-                <a href="blog-single.html" class="block-20" style="background-image: url('{% static 'images/image_8.jpg' %}');">
-                </a>
-                <div class="text p-4">
-                  <div class="meta">
-                    <div><a href="#">July 7, 2018</a></div>
-                    <div><a href="#">Admin</a></div>
-                  </div>
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p class="clearfix">
-                    <a href="#" class="float-left">Read more</a>
-                    <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="blog-entry" data-aos-delay="200">
-                <a href="blog-single.html" class="block-20" style="background-image: url('{% static 'images/image_9.jpg' %}');">
-                </a>
-                <div class="text p-4">
-                  <div class="meta">
-                    <div><a href="#">July 7, 2018</a></div>
-                    <div><a href="#">Admin</a></div>
-                  </div>
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <p class="clearfix">
-                    <a href="#" class="float-left">Read more</a>
-                    <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                  </p>
-                </div>
-              </div>
-            </div>
+          {% endfor %}
+           
           </div>
         </div>
       </div>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %}Login{% endblock title %}</title>
+{% block body %}
+<div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-5 box">
+          {% if form.errors %}
+                 <p> incorrect username or password please login again or register </p>
+          {% else %}
+            <h2 class="mb-5">Log in with your account</h2>
+          {% endif %}
+            <form method="post">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Username</label>
+                      {{ form.username }}
+                    </div>
+                  </div>
+                  <div class="row mb-5">
+                    <div class="col-md-12 form-group">
+                      <label for="name">Password</label>
+                      {{ form.password }}
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div style="padding-left: 30%;">
+                        <button type="submit" class="btn btn-primary mb-2">Login</button>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+{% endblock body %}

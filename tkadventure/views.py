@@ -7,11 +7,18 @@ from tkadventure.forms import *
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
+from blog.models import Post
 
 
 
 def index(request):
-    return render(request, 'index.html')
+    posts = Post.objects.all().order_by('-publish')[0:4]
+    tour = Tour.objects.filter(popular=True).order_by('name')[0:8]
+    context = {
+         'posts': posts,
+         'tours': tour
+    }
+    return render(request, 'index.html', context)
 
 
 def tour_list(request):
@@ -19,6 +26,7 @@ def tour_list(request):
     template_name = 'tkadventure/tour_list.html'
     myFilter = TourFilter(request.GET, queryset=tours)
     tours = myFilter.qs
+    
     
     if request.method == "POST":
 

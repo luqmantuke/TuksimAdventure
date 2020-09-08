@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from django.urls import reverse_lazy
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,6 +21,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -29,6 +31,9 @@ INSTALLED_APPS = [
     'django_filters',
     'crispy_forms',
     'widget_tweaks',
+    'blog',
+    'storages',
+    'django.core.mail.backends.smtp',
 ]
 
 MIDDLEWARE = [
@@ -115,3 +120,20 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+
+SITE_ID = 1
+
+LOGOUT_REDIRECT_URL = 'home'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.outlook.com'
+EMAIL_HOST_USER = 'luqmantuke@outlook.com'
+EMAIL_HOST_PASSWORD = 'P%m6JC6DJrdP$6K4Vzp'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+FAIL_SILENTLY = False
+
+
+# Adding Disqus 
+DISQUS_API_KEY = 'axTa1LTUAtaD0K6xmUEbKoXM5vPl3GhpEwvfsgnFVTpqOFKAOmlm77Kge0YR9VNx'
+DISQUS_WEBSITE_SHORTNAME = 'tanzablog'

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<title>{% block title %} {{ post.title }} {% endblock title %}</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap" rel="stylesheet">
+{% block body %}
+      <section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_3.jpg' %}');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 ftco-animate">
+              <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span><a href="blog.html">Blog</a></span> <span>Single Blog</span></p>
+              <h1 class="mb-3">Blog details</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END slider -->
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ftco-animate">
+            <h2 class="mb-3">{{ post.name }}</h2>
+            <p>
+              <img src="{{ post.image.url }}" alt="{{ post.name }}" class="img-fluid">
+            </p>
+           <div style="font-size: 16pt;font-family: 'Amiri', serif;font-weight:Bold 700 italic;">  <p>{% autoescape off %}{{ post.body | linebreaks | safe }}{% endautoescape %}</p></div>
+
+           </div>
+        </div>
+      </div>
+      <div class="tag-widget post-tag-container mb-5 mt-5">
+              <ul>
+         <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">Share on Facebook!</a></li><i class="fa fa-facebook"></i>
+         <li><a href="whatsapp://send?text={{ request.build_absolute_uri }}" data-action="share/whatsapp/share" onClick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on whatsapp">Share on Whatsapp!</a></li><i class="fa fa-whatsapp"></i>
+         <li><a href="https://twitter.com/share?url={{ request.build_absolute_uri }}&text=<TITLE>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Twitter">Share on Twitter!</a></li><i class="fa fa-twitter"></i>
+
+      </ul>
+            </div>
+    </section> <!-- .section -->
+
+     
+      </div>
+{% endblock body %}
+
