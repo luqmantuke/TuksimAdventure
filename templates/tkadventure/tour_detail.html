@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+<title>{% block title %} {{ tour.name }} {% endblock title %}</title>
+{% block body %}
+     <section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_3.jpg' %}');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 tco-animate">
+              <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span><a href="blog.html">Blog</a></span> <span>Single Blog</span></p>
+              <h1 class="mb-3">{{ tour.name }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END slider -->
+
+  
+      <div class="container">
+        <div class="row">
+            <div style="padding-top:2%;padding-bottom:2%">
+            <h2 >{{ tour.name }} --> {{ tour.location }}
+            </div>
+            <div style="padding-bottom:5%">
+              <img src="{{ tour.image.url }}" alt="{{ tour.name }}" class="img-fluid">
+            </div>
+            {% autoescape off %}<p style="color:green;font-size:16px;font-weight: bold;font-family: "Lucida Console", Courier, monospace;">{{ tour.tour_descr}}</p>{% endautoescape %}
+            
+       </div>
+       <div style="font-family: 'Permanent Marker', cursive;color:blue;text-align:center;font-size:46px;">
+       Book Now
+       </div>
+       <form method="post" action="{% url 'tours' %}">
+{% csrf_token %}
+{% if tourform.errors %}
+            <span>{{ tourform.errors|striptags }}</span>
+        {% endif %}
+  <div class="form-group">
+  <div style="color:green;">  <label for="exampleInputEmail1">Email address</label></div> 
+      {% render_field tourform.email class="form-control" placeholder="example@example.com"%}
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+   <div style="color:green;"> <label for="exampleInputPassword1">Full name</label></div>
+       {% render_field tourform.full_name class="form-control" placeholder="John David Paul"%}
+  </div>
+  <div class="form-group">
+    <div style="color:green;"><label for="exampleInputPassword1">Tour name</label></div>
+     <small id="emailHelp" class="form-text text-muted">Re-type Tour Name to verify your submition  <b><i><u> "{{ tour.name }}"</u></i></b></small>
+      {% render_field tourform.tour_name class="form-control"%}
+  </div>
+ <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+     <div style="color:green;"> <label class="mr-sm-2" for="inlineFormCustomSelect">Number of People</label></div>
+        {% render_field tourform.quantity class="form-control" placeholder="1"%}
+</div>
+</div>
+  <div class="form-group">
+    <div style="color:green;"><label for="exampleInputPassword1">Message</label></div>
+      {% render_field tourform.message class="form-control" placeholder="Hello i need to climb mount Kilimanjaro.........."%}
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{% endblock body %}

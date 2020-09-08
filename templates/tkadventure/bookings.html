@@ -2,7 +2,7 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block title %}
-Tours
+Tour Booking
 {% endblock title %}
 {% block body %}
   
@@ -46,7 +46,7 @@ Tours
             <div class="row">
             {% for tours in tour %}
               <div class="col-md-6 col-lg-6 mb-4 ftco-animate">
-                <a href="{% url 'tour_detail' tours.slug  %}" class="block-5" style="background-image: url({{ tours.image.url }});">
+                <a href="#" class="block-5" style="background-image: url({{ tours.image.url }});">
                   <div class="text">
                     <span class="type">{{ tours.type }}</span>
                     <h3 class="heading">{{ tours.name }}</h3>
