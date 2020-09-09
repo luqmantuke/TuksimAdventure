@@ -45,3 +45,12 @@ def slug_generator(sender, instance, *args, **kwargs):
 
 pre_save.connect(slug_generator, sender = Tour)
 
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    subject = models.CharField(max_length=80)
+    message = models.CharField(max_length=20000)
+
+    def __str__(self):
+        return self.name
+    
