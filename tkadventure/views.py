@@ -8,6 +8,8 @@ from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from blog.models import Post
+from django.core.mail import send_mail, BadHeaderError
+from tuksimadventures import settings
 
 
 
@@ -26,14 +28,26 @@ def tour_list(request):
     template_name = 'tkadventure/tour_list.html'
     myFilter = TourFilter(request.GET, queryset=tours)
     tours = myFilter.qs
-    
+    subject = "Someone just suggested a tour man!!"
     
     if request.method == "POST":
 
         form = BookingForm(request.POST)
         if form.is_valid():
+            full_name = form.cleaned_data['full_name']
+            email = form.cleaned_data['email']
+            tour_name = form.cleaned_data['tour_name']
+            quantity = form.cleaned_data['quantity']
+            message = form.cleaned_data['message']
+            user_message = f'Customer {full_name} with the email {email} just suggested a tour to "{tour_name}" with quantity of {quantity} person/people and left a message "{message}" please contact him as soon as possible'
             form.save()
-            messages.success(request,"Tour submition was successfully!")
+            try:
+                send_mail(subject, user_message, settings.EMAIL_HOST_USER, ['lsuleiman2002@gmail.com'], settings.FAIL_SILENTLY)
+            
+            except BadHeaderError:
+                return HttpResponse('Invalid Header.')
+            messages.success(request,"Tour submition was successfully we shall contact you shortly!")
+
             return HttpResponseRedirect(reverse('home'))
         else:
             print(form.errors)
@@ -45,6 +59,7 @@ def tour_list(request):
 
 def tour_detail(request, slug):
     q = Tour.objects.filter(slug__iexact = slug)
+    subject = "Someone just booked a tour man!!"
     if q.exists(): 
         q = q.first()
     else: 
@@ -55,8 +70,20 @@ def tour_detail(request, slug):
 
         form = BookingForm(request.POST)
         if form.is_valid():
+            full_name = form.cleaned_data['full_name']
+            email = form.cleaned_data['email']
+            tour_name = form.cleaned_data['tour_name']
+            quantity = form.cleaned_data['quantity']
+            message = form.cleaned_data['message']
+            user_message = f'Customer " " {full_name} with the email " " {email} just booked a tour to " " "{tour_name}" with quantity of " "  {quantity} person/people and left a message " " "{message}" please contact him as soon as possible'
             form.save()
-            messages.success(request,"Tour submition was successfully!")
+            try: 
+                send_mail(subject, user_message, settings.EMAIL_HOST_USER, ['lsuleiman2002@gmail.com'], settings.FAIL_SILENTLY)
+            
+            except BadHeaderError:
+                return HttpResponse('Invalid Header.')
+            form.save()
+            messages.success(request,"Booking  was successfully we shall contact you shortly thank you!")
             return HttpResponseRedirect(reverse('home'))
         else:
             print(form.errors)
