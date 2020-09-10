@@ -9,7 +9,6 @@
         <div class="container">
           <div class="row slider-text align-items-center">
             <div class="col-md-7 col-sm-12 tco-animate">
-              <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span><a href="blog.html">Blog</a></span> <span>Single Blog</span></p>
               <h1 class="mb-3">{{ tour.name }}</h1>
             </div>
           </div>
@@ -22,7 +21,7 @@
       <div class="container">
         <div class="row">
             <div style="padding-top:2%;padding-bottom:2%">
-            <h2 >{{ tour.name }} --> {{ tour.location }}
+            <h2 >{{ tour.name }} location: {{ tour.location }}
             </div>
             <div style="padding-bottom:5%">
               <img src="{{ tour.image.url }}" alt="{{ tour.name }}" class="img-fluid">
