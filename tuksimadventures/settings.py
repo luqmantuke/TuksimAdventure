@@ -32,8 +32,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'blog',
-    'storages',
     'django.core.mail.backends.smtp',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -114,12 +114,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+AWS_ACCESS_KEY_ID = 'AKIA342ZTI53HEZJKGEJ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'tuksim-buckets'
+AWS_S3_REGION_NAME = 'us-east-2'
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
+# AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 SITE_ID = 1
@@ -132,3 +140,4 @@ EMAIL_HOST_PASSWORD = '@-Biafrah-$#2918'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 FAIL_SILENTLY = False
+
