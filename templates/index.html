@@ -39,58 +39,71 @@
       </div>
     </section>
     <!-- END slider -->
-
-
-
-    <section class="ftco-section-2">
+<div style="padding-top:8%;">
+<section class="ftco-section-2">
       <div class="container-fluid d-flex">
         <div class="section-2-blocks-wrapper row no-gutters">
-          <div class="img col-sm-12 col-lg-6" style="background-image: url('{% static 'images/tour-1.jpg' %}');">
-            <a href="https://vimeo.com/45830194" class="button popup-vimeo"><span class="ion-ios-play"></span></a>
+          <div class="img col-sm-12 col-lg-6" style="background-image: url('{% static 'images/logo.jpg' %}');">
           </div>
           <div class="text col-lg-6 ftco-animate">
             <div class="text-inner align-self-start">
-              
               <h3>Welcome to <i>Tuksim Adventures</i> incoperating with <u><i>Larusa Treks And Safaris</i></u>
               </h3>
               <p>We established this firm as we saw the need of security for travelers' financial, property and health. We take responsibility of your destinations with 100% guarantee.</p>
-              <h4>How to book and ask for Destinations?</h4>
-              <p>For security issues, we are asking our customers not to send money or reply to chats different from:<br> <blockquote><i><u>info@tuksimadventures.com,<br> support@tuksimadventures.com,<br>manager@tuksimadventures.com,<br>Our Whatsapp account or<br>Our Online Support.</blockquote></i></u><i><u><br></i></u></p>
-           <p>For bookings please visit our <a href="#"><i><u>Tours</u></i></a> page and fill requirements such as Email, destination and we will reply you instantly via email(recommended) provided or from
-           whatsapp and online support. </p>
-           <p>Each destination has it's own price. We like to listen on the standard and price that our customers like and can afford. Each destination will be negotiated depending on standards that customers require.</p>
+              <p>We provide service such as Trekking, safari beach tours and many more. Also, we arrange any tour suggested by the customer. Visit <a href="{% url 'tours' %}" target="_blank">tours page</a> for more info.</p>
+             <p>We have a 247 customer support through our email, online support and our whatsapp support. All this is for providing a good and secured services. <a href="{% url 'contactus' %}" target="_blank">Contact us</a> for more info.</p>
+            <p>We do provide blog posts news everyweek about different things concerning Adventures. The contents are free and doesn't need account to read them. Consider reading them in <a href="{% url 'blog' %}" target="_blank">blog page</a></p>
+
             </div>
           </div>
         </div>
       </div>
     </section>
+</div>
+
+
+<div style="padding-top:8%;">
+   <div class="container">
+  <div class="row">
+    <div class="col">
+ <iframe width="560" height="400" src="https://www.youtube.com/embed/nle3u6Ww6Xk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col">
+  <h3>How to book?</h3>
+  <p><b><p>For security issues, we are asking our customers not to send money or reply to chats different from <b><u>tuksim@tuksimadventures.com, our online support or whatsapp support.</u></b></p>
+           <p>For bookings please visit our <a href="{% url 'tours' %}"><i><u>Tours</u></i></a> page and follow video guide and fill the form at the bottom and we will reply you instantly via email(recommended) provided or from our whatsapp and online support.</p>
+           <p>Each destination has it's own price. We like to listen on the standard and price that our customers like and can afford. Each destination's price will be negotiated depending on standards that customers require and secure payment methods will be provided.</p></b></p>
+    </div>
+</div>
+
+</div>
 
     <section class="ftco-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 promo ftco-animate">
-            <a href="#" class="promo-img mb-4" style="background-image: url('{% static 'images/promo-1.jpg' %}');"></a>
+            <a href="#" class="promo-img mb-4" style="background-image: url('{% static 'images/safari.jpg' %}');"></a>
             <div class="text text-center">
-              <h2>Group Cruises</h2>
+              <h2>Safari</h2>
 
             </div>
           </div>
           <div class="col-lg-3 promo ftco-animate">
-            <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/promo-2.jpg' %});"></a>
+            <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/beach.jpg' %});"></a>
             <div class="text text-center">
               <h2>Beach Tours</h2>
   
             </div>
           </div>
           <div class="col-lg-3 promo ftco-animate">
-            <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/promo-3.jpg' %});"></a>
+            <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/mountain.jpg' %});"></a>
             <div class="text text-center">
               <h2>Mountain Tours</h2>
 
             </div>
           </div>
           <div class="col-lg-3 promo ftco-animate">
-            <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/promo-3.jpg' %});"></a>
+            <a href="#" class="promo-img mb-4" style="background-image: url({% static 'images/family.jpg' %});"></a>
             <div class="text text-center">
               <h2>Family Tours</h2>
 
@@ -113,7 +126,7 @@
               <div class="d-flex justify-content-center"><div class="icon d-flex justify-content-center mb-3"><span class="align-self-center flaticon-sailboat"></span></div></div>
               <div class="media-body p-2">
                 <h3 class="heading">Special Activities</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>We perform special activities such as charity and any activity that the customer rekons.</p>
               </div>
             </div>      
           </div>
@@ -122,7 +135,7 @@
               <div class="d-flex justify-content-center"><div class="icon d-flex justify-content-center mb-3"><span class="align-self-center flaticon-around"></span></div></div>
               <div class="media-body p-2">
                 <h3 class="heading">Travel Arrangements</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>We arrange and assure secured travel to different places within the country.</p>
               </div>
             </div>      
           </div>
@@ -131,7 +144,7 @@
               <div class="d-flex justify-content-center"><div class="icon d-flex justify-content-center mb-3"><span class="align-self-center flaticon-compass"></span></div></div>
               <div class="media-body p-2">
                 <h3 class="heading">Private Guide</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>We provide private guide in all places within the country with high security and standard.</p>
               </div>
             </div>    
           </div>
@@ -140,8 +153,8 @@
             <div class="media block-6 services d-block text-center">
               <div class="d-flex justify-content-center"><div class="icon d-flex justify-content-center mb-3"><span class="align-self-center flaticon-map-of-roads"></span></div></div>
               <div class="media-body p-2">
-                <h3 class="heading">Location Manager</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Adventure</h3>
+                <p>We provide adventure activities such as mountain climbing beach tour and safari.</p>
               </div>
             </div>      
           </div>
@@ -186,122 +199,64 @@
           <div class="carousel owl-carousel ftco-owl">
             <div class="item text-center">
               <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-4" style="background-image: url({% static 'images/person_1.jpg' %})" style="border: 1px solid red;"></div>
+                <div class="user-img mb-4" style="background-image: url({% static 'images/chris.jpg' %})" style="border: 1px solid red;"></div>
                 <div class="text">
                   <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span></p>
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
+                  <p class="mb-5">Great services, hospitality, support, affordable price and security is one of the best thing that i like from Tuksim Adventures.</p>
+                  <p class="name">Chris Barnet</p>
+                  <span class="position">Guests from Australia</span>
+                </div>
+              </div>
+            </div>
+            <div class="item text-center">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-4" style="background-image: url({% static 'images/anna.jpeg' %})" style="border: 1px solid red;"></div>
+                <div class="text">
+                  <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span></p>
+                  <p class="mb-5">I had about the beauty of Zanzibar and saw an ad of Tuksim Adventures and they planned well and I enjoyed. Thank you Tuksim</p>
+                  <p class="name">Anna Scorfield</p>
                   <span class="position">Guests from Italy</span>
                 </div>
               </div>
             </div>
             <div class="item text-center">
               <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-4" style="background-image: url({% static 'images/person_2.jpg' %})" style="border: 1px solid red;"></div>
+                <div class="user-img mb-4" style="background-image: url({% static 'images/dennis.jpg' %})" style="border: 1px solid red;"></div>
                 <div class="text">
                   <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span></p>
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">Guests from Italy</span>
+                  <p class="mb-5">I'm a botanist and visited Tanzania to perform my research. Tuksim Adventures arranged the trip and I succeeded my research.</p>
+                  <p class="name">Dennis Alphonce</p>
+                  <span class="position">Usa</span>
                 </div>
               </div>
             </div>
             <div class="item text-center">
               <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-4" style="background-image: url({% static 'images/person_3.jpg' %})" style="border: 1px solid red;"></div>
+                <div class="user-img mb-4" style="background-image: url({% static 'images/richard.jpeg' %})" style="border: 1px solid red;"></div>
                 <div class="text">
                   <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span></p>
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">Guests from Italy</span>
+                  <p class="mb-5">I had a dream of climbing mount Kilimanjaro and I was recommended to Tuksim Adventures by my friend and the trek was amaizing.</p>
+                  <p class="name">Richard Paul</p>
+                  <span class="position">Guests from Britain</span>
                 </div>
               </div>
             </div>
             <div class="item text-center">
               <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-4" style="background-image: url({% static 'images/person_1.jpg' %})" style="border: 1px solid red;"></div>
+                <div class="user-img mb-4" style="background-image: url({% static 'images/ben.jpg' %})" style="border: 1px solid red;"></div>
                 <div class="text">
                   <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span></p>
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">Guests from Italy</span>
-                </div>
-              </div>
-            </div>
-            <div class="item text-center">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-4" style="background-image: url({% static 'images/person_1.jpg' %})" style="border: 1px solid red;"></div>
-                <div class="text">
-                  <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span></p>
-                  <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  <p class="name">Dennis Green</p>
-                  <span class="position">Guests from Italy</span>
+                  <p class="mb-5">I went to Serengeti with my family and Tuksim Adventure took a great handle of my trip and i really enjoyed. Thanks Tuksim ..</p>
+                  <p class="name">Ben Klaus</p>
+                  <span class="position">Guest from Germany</span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </section>
 
-    <section class="ftco-section">
-      <div class="container-fluid">
-        <div class="row mb-5 pb-5 no-gutters">
-          <div class="col-lg-4 bg-light p-3 p-md-5 d-flex align-items-center heading-section ftco-animate">
-            <div>
-              <h2 class="mb-5 pb-3">Want to get our hottest travel deals top tips and advice? Subscribe us now!</h2>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <span class="icon icon-paper-plane"></span>
-                  <input type="text" class="form-control" placeholder="Enter your email address">
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-lg-8 p-2 pl-md-5 heading-section">
-            <h2 class="mb-5 p-2 pb-3 ftco-animate">Most Recommended Hotels</h2>
-            <div class="row no-gutters d-flex">
-              <div class="col-md-4 ftco-animate">
-                <a href="#" class="block-5" style="background-image: url('{% static 'images/hotel-1.jpg' %}');">
-                  <div class="text">
-                    <span class="price">$29/night</span>
-                    <h3 class="heading">Luxe Hotel</h3>
-                    <div class="post-meta">
-                      <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-4 ftco-animate">
-                <a href="#" class="block-5" style="background-image: url('{% static 'images/hotel-2.jpg' %}');">
-                  <div class="text">
-                    <span class="price">$29/night</span>
-                    <h3 class="heading">Deluxe Hotel</h3>
-                    <div class="post-meta">
-                      <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-4 ftco-animate">
-                <a href="#" class="block-5" style="background-image: url('{% static 'images/hotel-3.jpg' %}');">
-                  <div class="text">
-                    <span class="price">$29/night</span>
-                    <h3 class="heading">Deluxe Hotel</h3>
-                    <div class="post-meta">
-                      <span>Ameeru Ahmed Magu Male’, Maldives</span>
-                    </div>
-                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span> <span>500 reviews</span></p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="ftco-section bg-light">
       <div class="container">

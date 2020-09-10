@@ -1,6 +1,44 @@
 {% extends 'base.html' %}
+{% load static %}
 <title>{% block title %}Server Error{% endblock title %}</title>
 {% block body %}
+<section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_4.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 ftco-animate">
+              <h1 class="mb-3">Experience the best trip ever</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_1.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 ftco-animate">
+              <h1 class="mb-3">Your financial and personal security is 
+                               our first priority
+                               </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image: url('{% static 'images/bg_3.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-7 col-sm-12 ftco-animate">
+              <h1 class="mb-3">Travel Operator Just For You</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END slider -->
     <div class="container">
       <div class="row text-center">
         <div class="col-lg-6 offset-lg-3 col-sm-6 offset-sm-3 col-12 p-3 error-main">

@@ -3,7 +3,7 @@
 {% load static %}
   <head>
     <title>{% block title %}
-    {% endblock title %} Tuksim Adventure</title>
+    {% endblock title %} Tuksim Adventures</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -30,26 +30,28 @@
   {% endfor %}
 </div>
 {% endif %}
+{% with url_name=request.resolver_match.url_name %}
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html">TuksimAdventure</a>
+        <a class="navbar-brand" href="{% url 'home' %}">TuksimAdventures</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="tours.html" class="nav-link">Tours</a></li>
-            <li class="nav-item"><a href="hotels.html" class="nav-link">Hotels</a></li>
-            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item {% if url_name == 'home' %} active {%endif%}"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+            <li class="nav-item {% if url_name == 'tours' %} active {%endif%}"><a href="{% url 'tours' %}" class="nav-link">Tours</a></li>
+            <li class="nav-item {% if url_name == 'blog' %} active {%endif%}"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+            <li class="nav-item {% if url_name == 'contactus' %} active {%endif%}"><a href="{% url 'contactus' %}" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="https://immigration.go.tz/index.php/en/" class="nav-link">Visa</a></li>
+            <li class="nav-item {% if url_name == 'dashboard' %} active {%endif%}"><a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a></li>
+            
           </ul>
         </div>
       </div>
     </nav>
+{% endwith %}
     <!-- END nav -->
 {% block body %}
 {% endblock body %}
@@ -61,36 +63,35 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Voyage Fellow Tourist</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h2 class="ftco-heading-2">Tuksim Adventures</h2>
+              <p>We established this firm as we saw the need of security for travelers' financial, property and health. We take responsibility of your destinations with 100% guarantee.</p>
             </div>
           </div>
           <div class="col-md">
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Book Now</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Flight</a></li>
-                <li><a href="#" class="py-2 d-block">Hotels</a></li>
-                <li><a href="#" class="py-2 d-block">Tour</a></li>
-                <li><a href="#" class="py-2 d-block">Car Rent</a></li>
-                <li><a href="#" class="py-2 d-block">Beach &amp; Resorts</a></li>
-                <li><a href="#" class="py-2 d-block">Mountains</a></li>
-                <li><a href="#" class="py-2 d-block">Cruises</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Hotels</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Tour</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Car Rent</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Beach &amp; Resorts</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Mountains</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Cruises</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md">
              <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Top Deals</h2>
+              <h2 class="ftco-heading-2">Top Destinations</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Luxe Hotel</a></li>
-                <li><a href="#" class="py-2 d-block">Venice Tours</a></li>
-                <li><a href="#" class="py-2 d-block">Deluxe Hotels</a></li>
-                <li><a href="#" class="py-2 d-block">Boracay Beach &amp; Resorts</a></li>
-                <li><a href="#" class="py-2 d-block">Beach &amp; Resorts</a></li>
-                <li><a href="#" class="py-2 d-block">Fuente Villa</a></li>
-                <li><a href="#" class="py-2 d-block">Japan Tours</a></li>
-                <li><a href="#" class="py-2 d-block">Philippines Tours</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Kilimanjaro</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Serengeti</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Zanzibar</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Ngorongoro</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Manyara</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Olduvai</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Mikumi</a></li>
+                <li><a href="{% url 'tours' %}" class="py-2 d-block">Selous Game Reserve</a></li>
               </ul>
             </div>
           </div>
@@ -98,10 +99,10 @@
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Contact Information</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">198 West 21th Street, Suite 721 New York NY 10016</a></li>
-                <li><a href="#" class="py-2 d-block">+ 1235 2355 98</a></li>
-                <li><a href="#" class="py-2 d-block">info@yoursite.com</a></li>
-                <li><a href="#" class="py-2 d-block">email@email.com</a></li>
+                <li><a href="#" class="py-2 d-block">Arusha Tanzania</a></li>
+                <li><a href="#" class="py-2 d-block">+255 758585847</a></li>
+                <li><a href="#" class="py-2 d-block">tuksim@tuksimadventures.com</a></li>
+                <li><a href="#" class="py-2 d-block">www.tuksimadventures.com</a></li>
               </ul>
             </div>
           </div>
@@ -119,7 +120,7 @@
           <div class="col-md-12 text-center">
 
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This site was made by <a href="https://instagram.com/smartcodes_tz" target="_blank">Luqman Tuke(smartcodes-tz)</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>
@@ -131,7 +132,9 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-adafb924-56e7-4c9b-9156-9ac7b78ebdb4"></div>
+  <script>(function(){var pp=document.createElement('script'), ppr=document.getElementsByTagName('script')[0]; stid='VDhuR2JJN2k5OTFaSnFISmZpV3NRdz09';pp.type='text/javascript'; pp.async=true; pp.src=('https:' == document.location.protocol ? 'https://' : 'http://') + 's01.live2support.com/dashboardv2/chatwindow/'; ppr.parentNode.insertBefore(pp, ppr);})();</script>
   <script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
   <script src="{% static 'js/popper.min.js' %}"></script>
