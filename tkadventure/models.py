@@ -16,7 +16,7 @@ class Tour(models.Model):
     location = models.CharField(max_length=50)
     tour_type = models.CharField(choices=tour_list, max_length=20)
     slug = models.SlugField(max_length=250, blank=True, null=True)
-    tour_descr = models.CharField(max_length=1000, blank=True, null=True)
+    tour_descr = models.CharField(max_length=20000, blank=True, null=True)
     popular = models.BooleanField(max_length=10, blank=True, null=True)
 
     def get_absolute_url(self):
