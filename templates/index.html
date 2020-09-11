@@ -272,10 +272,10 @@
                 </a>
                 <div class="text p-4">
                   <div class="meta">
-                    <div><a href="#">{{ post.publish }}</a></div>
-                    <div><a href="#">{{ post.author }}</a></div>
+                    <div><a href="{% url 'post_detail' post.slug %}">{{ post.publish }}</a></div>
+                    <div><a href="{% url 'post_detail' post.slug %}">{{ post.author }}</a></div>
                   </div>
-                  <h3 class="heading"><a href="#">{{ post.name }}</a></h3>
+                  <h3 class="heading"><a href="{% url 'post_detail' post.slug %}">{{ post.name }}</a></h3>
                   <p class="clearfix">
                     <a href="{% url 'post_detail' post.slug %}" class="float-left">Read more</a>
                   </p>

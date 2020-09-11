@@ -1,0 +1,3 @@
+Sitemap: https://www.tanzablog.com/sitemap.xml
+User-agent: *
+Disallow:
