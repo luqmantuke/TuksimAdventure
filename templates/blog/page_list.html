@@ -32,7 +32,7 @@
                   <div><a href="#">{{ post.publish }}</a></div>
                   <div><a href="#">{{ post.author }}</a></div>
                 </div>
-                <h3 class="heading">{{post.body | slice:":50"| safe}}</h3>
+                <h3 class="heading">{{post.body | slice:":30"| safe}}</h3>
                 <p class="clearfix">
                   <a href="{% url 'post_detail' post.slug  %}" class="float-left">Read more</a>
 
