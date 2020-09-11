@@ -12,8 +12,8 @@ tour_list = [
 
 class Tour(models.Model):
     image = models.ImageField(upload_to='media')
-    name = models.CharField(max_length=20)
-    location = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
     tour_type = models.CharField(choices=tour_list, max_length=20)
     slug = models.SlugField(max_length=250, blank=True, null=True)
     tour_descr = models.CharField(max_length=20000, blank=True, null=True)
