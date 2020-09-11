@@ -7,5 +7,5 @@ class TourFilter(django_filters.FilterSet):
         model = Tour
         fields = {
             'name': ['icontains'],
-            'tour_type': ['exact']
+            'tour_type': ['icontains']
         }
