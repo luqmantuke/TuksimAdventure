@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-<title>{% block title %}TanzaBlog{% endblock title %}
+<title>{% block title %}Blog{% endblock title %}
   <!-- Page Content -->
 
 {% block body %}
@@ -10,7 +10,7 @@
         <div class="container">
           <div class="row slider-text align-items-center">
             <div class="col-md-7 col-sm-12 ftco-animate">
-              <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
+              <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home</a></span> <span>Blog</span></p>
               <h1 class="mb-3">Blog</h1>
             </div>
           </div>
@@ -32,7 +32,7 @@
                   <div><a href="#">{{ post.publish }}</a></div>
                   <div><a href="#">{{ post.author }}</a></div>
                 </div>
-                <h3 class="heading">{{post.body | slice:":-50"| safe}}</h3>
+                <h3 class="heading">{{post.body | slice:":50"| safe}}</h3>
                 <p class="clearfix">
                   <a href="{% url 'post_detail' post.slug  %}" class="float-left">Read more</a>
 
