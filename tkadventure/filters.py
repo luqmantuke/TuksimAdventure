@@ -5,4 +5,7 @@ from tkadventure.models import *
 class TourFilter(django_filters.FilterSet):
     class Meta:
         model = Tour
-        fields = ('name', 'tour_type')
+        fields = {
+            'name': ['icontains'],
+            'tour_type': ['exact']
+        }
