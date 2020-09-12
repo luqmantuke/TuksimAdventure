@@ -7,6 +7,7 @@ from django.urls import reverse
 from ckeditor.fields import RichTextField
 
 
+
 class Post(models.Model):
     STATUS_CHOICES = (('Draft', 'draft'), ('Published', 'published'))
     name = models.CharField(max_length=250)
