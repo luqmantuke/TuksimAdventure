@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.signals import pre_save
 from tuksimadventures.utils import unique_slug_generator
+from ckeditor.fields import RichTextField
 
 tour_list = [
     ('Trekking', "Trekking"),
@@ -16,7 +17,7 @@ class Tour(models.Model):
     location = models.CharField(max_length=100)
     tour_type = models.CharField(choices=tour_list, max_length=20)
     slug = models.SlugField(max_length=250, blank=True, null=True)
-    tour_descr = models.CharField(max_length=20000, blank=True, null=True)
+    tour_descr = RichTextField(blank=True, null=True)
     popular = models.BooleanField(max_length=10, blank=True, null=True)
 
     def get_absolute_url(self):
