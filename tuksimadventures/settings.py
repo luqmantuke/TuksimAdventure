@@ -148,3 +148,11 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 FAIL_SILENTLY = False
 
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}

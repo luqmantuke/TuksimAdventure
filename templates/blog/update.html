@@ -42,9 +42,10 @@
     <!-- END slider -->
 <div style="background-color: rgb(176, 188, 240);
   padding-top: 8%;
-  padding-left: 35%;">
+  padding-left: 20%;">
    <form method='post' enctype="multipart/form-data">
     {% csrf_token %}
+    {{ form.media }}
     {{ form.as_p }}
     <div style="padding-left: 20%;">
     <button type="submit" class="btn btn-primary mb-2">Update Post</button>

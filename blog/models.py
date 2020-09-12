@@ -12,7 +12,7 @@ class Post(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = RichTextField()
+    body = RichTextField(blank=True, null=True)
     image = models.FileField(null=True)
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)

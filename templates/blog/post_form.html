@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 <title>{% block title %}Create Posts{% endblock title %}</title>
 {% block body %}
@@ -39,13 +40,13 @@
         </div>
       </div>
     </section>
-    <!-- END slider -->
 <div style="background-color: rgb(176, 188, 240);
   padding-top: 8%;
-  padding-left: 35%;">
+  padding-left: 20%;">
    <form method='post' enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.media }}
+    {{ form | crispy }}
     <div style="padding-left: 20%;">
     <button type="submit" class="btn btn-primary mb-2">Create Post</button>
     </div>
