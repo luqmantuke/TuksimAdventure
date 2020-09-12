@@ -10,7 +10,7 @@ from ckeditor.fields import RichTextField
 
 class Post(models.Model):
     STATUS_CHOICES = (('Draft', 'draft'), ('Published', 'published'))
-    name = models.CharField(max_length=250)
+    name = models.CharField(max_length=250, null=True)
     slug = models.SlugField(max_length=250, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
