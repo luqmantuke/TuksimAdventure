@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import pre_save
 from tuksimadventures.utils import unique_slug_generator
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
@@ -11,7 +12,7 @@ class Post(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = models.TextField()
+    body = RichTextField()
     image = models.FileField(null=True)
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)

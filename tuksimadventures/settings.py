@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'blog',
     'django.core.mail.backends.smtp',
-    'storages'
+    'storages',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
