@@ -27,7 +27,12 @@
               <img src="{{ tour.image.url }}" alt="{{ tour.name }}" class="img-fluid">
             </div>
             {% autoescape off %}<p style="color:green;font-size:16px;font-weight: bold;font-family: "Lucida Console", Courier, monospace;">{{ tour.tour_descr}}</p>{% endautoescape %}
-            
+               <ul>
+         <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">Share on Facebook!</a></li><i class="fa fa-facebook"></i>
+         <li><a href="whatsapp://send?text={{ request.build_absolute_uri }}" data-action="share/whatsapp/share" onClick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on whatsapp">Share on Whatsapp!</a></li><i class="fa fa-whatsapp"></i>
+         <li><a href="https://twitter.com/share?url={{ request.build_absolute_uri }}&text=<TITLE>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Twitter">Share on Twitter!</a></li><i class="fa fa-twitter"></i>
+
+      </ul>
        </div>
        <div style="font-family: 'Permanent Marker', cursive;color:blue;text-align:center;font-size:46px;">
        Book Now
