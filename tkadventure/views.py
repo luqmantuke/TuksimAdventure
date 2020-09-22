@@ -44,7 +44,7 @@ def tour_detail(request, slug):
             book_user_message = f'Customer "{book_full_name}" with the email "{book_email}" just booked a tour to " " "{book_tour_name}" with quantity of " "  {book_quantity} person/people and left a message " " "{book_message}" please contact him as soon as possible'
             form.save()
             try: 
-                send_mail(book_subject, book_user_message, settings.EMAIL_HOST_USER, ['lsuleiman2002@gmail.com'], settings.FAIL_SILENTLY)
+                send_mail(book_subject, book_user_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
             
             except BadHeaderError:
                 return HttpResponse('Invalid Header.')
@@ -83,7 +83,7 @@ def tour_list(request):
             user_message = f'Customer "{full_name}" with the email "{email}" just booked a tour to  "{tour_name}" with quantity of {quantity} person/people and left a message "{message}" please contact him as soon as possible.'
             form.save()
             try:
-                send_mail(subject, user_message, settings.EMAIL_HOST_USER, ['joycemollel001@gmail.com'], settings.FAIL_SILENTLY)
+                send_mail(subject, user_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
             
             except BadHeaderError:
                 return HttpResponse('Invalid Header.')
@@ -115,7 +115,7 @@ def contactView(request):
             message = form.cleaned_data['message']
             contact_message = f'Customer  "{name}" with the email {email} just contacted you and left a message  "{message}" please contact him as soon as possible'
             try: 
-                send_mail(subject, contact_message, settings.EMAIL_HOST_USER, ['lsuleiman2002@gmail.com'], settings.FAIL_SILENTLY)
+                send_mail(subject, contact_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
             except BadHeaderError:
                 return HttpResponse('Invalid Header.')
             
