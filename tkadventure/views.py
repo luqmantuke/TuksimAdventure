@@ -43,12 +43,12 @@ def tour_detail(request, slug):
             book_message = form.cleaned_data['message']
             book_user_message = f'Customer "{book_full_name}" with the email "{book_email}" just booked a tour to " " "{book_tour_name}" with quantity of " "  {book_quantity} person/people and left a message " " "{book_message}" please contact him as soon as possible'
             form.save()
-            try: 
-                send_mail(book_subject, book_user_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
+            #try: 
+                #send_mail(book_subject, book_user_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
             
-            except BadHeaderError:
-                return HttpResponse('Invalid Header.')
-            form.save()
+            #except BadHeaderError:
+                #return HttpResponse('Invalid Header.')
+            #form.save()
             messages.success(request, f'Booking  was successfully we shall contact you shortly {full_name} thank you!')
             return HttpResponseRedirect(reverse('home'))
         else:
@@ -82,11 +82,11 @@ def tour_list(request):
             message = form.cleaned_data['message']
             user_message = f'Customer "{full_name}" with the email "{email}" just booked a tour to  "{tour_name}" with quantity of {quantity} person/people and left a message "{message}" please contact him as soon as possible.'
             form.save()
-            try:
-                send_mail(subject, user_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
+            #try:
+                #send_mail(subject, user_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
             
-            except BadHeaderError:
-                return HttpResponse('Invalid Header.')
+            #except BadHeaderError:
+                #return HttpResponse('Invalid Header.')
             messages.success(request, f'Tour submition was successfully we shall contact you {full_name} shortly!')
 
             return HttpResponseRedirect(reverse('home'))
@@ -114,10 +114,10 @@ def contactView(request):
             message = form.cleaned_data['message']
             message = form.cleaned_data['message']
             contact_message = f'Customer  "{name}" with the email {email} just contacted you and left a message  "{message}" please contact him as soon as possible'
-            try: 
-                send_mail(subject, contact_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
-            except BadHeaderError:
-                return HttpResponse('Invalid Header.')
+            #try: 
+               #send_mail(subject, contact_message, settings.EMAIL_HOST_USER, ['tuksim@tuksimadventures.com'], settings.FAIL_SILENTLY)
+            #except BadHeaderError:
+                #return HttpResponse('Invalid Header.')
             
             messages.success(request, f"Thank You For Contacting Us { name }, We will Reach You as fast as we can. :)")
             return HttpResponseRedirect(reverse('home'))
