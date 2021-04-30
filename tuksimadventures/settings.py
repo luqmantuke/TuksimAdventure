@@ -142,12 +142,15 @@ SITE_ID = 1
 
 LOGOUT_REDIRECT_URL = 'home'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'tuksimadventures@gmail.com'
-EMAIL_HOST_PASSWORD = '%Br6UR6pTzEE89i#P'
+DEFAULT_FROM_EMAIL = 'admin@fauluhub.com'
+EMAIL_HOST = 'mail.privateemail.com'
+EMAIL_HOST_USER = 'admin@fauluhub.com'
+EMAIL_HOST_PASSWORD = '3QcQFiM!k6ct!88#TVw3'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 FAIL_SILENTLY = False
+
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 
