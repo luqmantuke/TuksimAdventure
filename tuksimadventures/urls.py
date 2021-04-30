@@ -13,8 +13,7 @@ urlpatterns = [
 ]
 
 
-handler403 = 'blog.views.handler403'
-handler404 = 'blog.views.handler404'
-handler400 = 'blog.views.handler400'
-handler500 = 'blog.views.handler500'
+
+handler404 = 'tkadventure.views.handler404'
+handler500 = 'tkadventure.views.handler500'
 
