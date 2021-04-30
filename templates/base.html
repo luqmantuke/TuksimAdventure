@@ -143,8 +143,12 @@
       </div>
     </footer>
     
-  
-  <script>(function(){var pp=document.createElement('script'), ppr=document.getElementsByTagName('script')[0]; stid='VDhuR2JJN2k5OTFaSnFISmZpV3NRdz09';pp.type='text/javascript'; pp.async=true; pp.src=('https:' == document.location.protocol ? 'https://' : 'http://') + 's01.live2support.com/dashboardv2/chatwindow/'; ppr.parentNode.insertBefore(pp, ppr);})();</script>
+
+{% comment %} Adding mylivechat {% endcomment %}
+<!--Add the following script at the bottom of the web page (before </body></html>)-->
+<script type="text/javascript">function add_chatinline(){var hccid=71589021;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline();</script>
+
 
   <!-- loader -->
   <!-- GetButton.io widget -->
