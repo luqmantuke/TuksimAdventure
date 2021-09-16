@@ -121,15 +121,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-AWS_ACCESS_KEY_ID = 'AKIA342ZTI53HEZJKGEJ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'tuksim-buckets'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'EMAIL HERE EXAMPLE luqman@gmail.com'
+EMAIL_HOST = 'EMAIL HOST HERE EXAMPLE mail.gmail.com'
+EMAIL_HOST_USER = 'EMAIL HOST USER'
+EMAIL_HOST_PASSWORD = 'YOUR PASSWORD'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+FAIL_SILENTLY = False
+
+
+# AWS MEDIA FILE STORAGE
+AWS_ACCESS_KEY_ID = 'AWS KEY ID HERE'
+AWS_SECRET_ACCESS_KEY = 'AWS SECRET KEY'
+AWS_STORAGE_BUCKET_NAME = 'AWS STORAGE NAME'
 # AWS_S3_REGION_NAME = 'us-east-'
 # AWS_S3_SIGNATURE_VERSION = 's3v4'
-# AWS_S3_FILE_OVERWRITE = False
+AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
 
 
 STATIC_URL = '/static/'
@@ -139,17 +149,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 
 SITE_ID = 1
-
-LOGOUT_REDIRECT_URL = 'home'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'admin@fauluhub.com'
-EMAIL_HOST = 'mail.privateemail.com'
-EMAIL_HOST_USER = 'admin@fauluhub.com'
-EMAIL_HOST_PASSWORD = '3QcQFiM!k6ct!88#TVw3'
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-FAIL_SILENTLY = False
 
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
